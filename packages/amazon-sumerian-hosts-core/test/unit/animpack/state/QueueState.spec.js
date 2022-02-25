@@ -217,7 +217,7 @@ describe('QueueState', () => {
         return onFinished();
       });
       queueState._promises.finish = new Deferred();
-      spyOn(queueState._queue.__proto__, 'next').and.callFake(() => {
+      spyOn(queueState._queue.getPrototypeOf(), 'next').and.callFake(() => {
         return {value: undefined, done: true};
       });
       const result = queueState.play();
