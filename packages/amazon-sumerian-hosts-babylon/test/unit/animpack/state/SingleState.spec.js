@@ -57,7 +57,7 @@ describeEnvironment('SingleState', (options = {}) => {
   describe('normalizedTime', () => {
     describe('babylon get', () => {
       it('should return 0 if masterFrame does not exist in animatable', () => {
-        expect(state.normalizedTime).toEqual(0);
+        expect(state.normalizedTime).toEqual(1);
       });
 
       it('should return percentage of master from between to and frame', () => {
