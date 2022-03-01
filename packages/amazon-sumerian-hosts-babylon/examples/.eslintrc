@@ -1,6 +1,6 @@
 {
   "extends": [
-    "../.eslintrc"
+    "../../../.eslintrc"
   ],
   "globals": {
     "HOST": "readonly"
