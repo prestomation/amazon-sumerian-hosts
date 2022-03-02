@@ -2,6 +2,7 @@ name: Run build/tests/lint on pull requests
 
 on:
   pull_request:
+  push:
 
 # By default the karma test runners use the karma 'Chrome' runner
 # This is great when running locally because the browser pops up and you get to see what it does
