@@ -19,6 +19,12 @@ jobs:
           perl -i -p -e "s/HOSTS_VERSION = .*/HOSTS_VERSION = '${{ github.event.release.tag_name }}';/" ${{ github.workspace }}/packages/amazon-sumerian-hosts-core/src/core/Utils.js
 
       - run: npm run release
+      - name: Archive code coverage results
+        uses: actions/upload-artifact@v3
+        with:
+          name: TestArtifacts
+          path: ${{ github.workspace }}
+
       # - run: npm publish --workspaces --access public
       #   env:
       #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
