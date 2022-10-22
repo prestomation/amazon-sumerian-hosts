@@ -14,7 +14,11 @@ jobs:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
       - run: npm install
+      - name: "Set version number"
+        run: |
+          perl -i -p -e "s/HOSTS_VERSION = .*/HOSTS_VERSION = '${{ github.sha }}';/" ${{ github.workspace }}/amazon-sumerian-hosts/packages/amazon-sumerian-hosts-core/src/core/Utils.js
+
       - run: npm run release
-      - run: npm publish --workspaces --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # - run: npm publish --workspaces --access public
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
